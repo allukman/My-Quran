@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">My Quran</string>
+    <string name="al_quran">Al Quran</string>
+    <string name="quotes_1">\"Sesungguhnya membaca Al-Quran adalah untuk mendekatkan kamu dengan sang pencipta\"</string>
 </resources>
