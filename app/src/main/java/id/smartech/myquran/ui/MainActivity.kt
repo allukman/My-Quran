@@ -1,7 +1,8 @@
-package id.smartech.myquran
+package id.smartech.myquran.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import id.smartech.myquran.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
