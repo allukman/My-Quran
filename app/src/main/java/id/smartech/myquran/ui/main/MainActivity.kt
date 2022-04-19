@@ -1,8 +1,6 @@
 package id.smartech.myquran.ui.main
 
 import android.os.Bundle
-import android.view.View
-import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -14,6 +12,7 @@ import id.smartech.myquran.base.BaseActivity
 import id.smartech.myquran.databinding.ActivityMainBinding
 import id.smartech.myquran.ui.main.model.ListSurahModel
 import id.smartech.myquran.ui.surah.DetailSurahActivity
+import id.smartech.myquran.util.Helper
 import id.smartech.myquran.util.KarsaLogger
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
@@ -25,9 +24,23 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         setLayout = R.layout.activity_main
         super.onCreate(savedInstanceState)
 
+
+
+        initData()
         setViewModel()
         setRecyclerView()
         subscribeLiveData()
+
+
+    }
+
+    private fun initData() {
+        val date = Helper.getCurrentDate()
+        val day = Helper.getCurrentDayOfWeek()
+        val today = "$day, $date"
+
+        bind.textClock.format12Hour = "kk:mm"
+        bind.date.text = today
     }
 
     private fun subscribeLiveData() {
@@ -52,6 +65,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     }
 
     private fun setRecyclerView() {
+        bind.rvSurah.isNestedScrollingEnabled = false
         mAdapter = SurahAdapter(list)
         bind.rvSurah.adapter = mAdapter
         bind.rvSurah.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)

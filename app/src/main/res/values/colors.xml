@@ -12,4 +12,9 @@
     <color name="bold_purple">#9b58ff</color>
     <color name="light_purple">#cf8bfa</color>
     <color name="primary_text_color">#8B4513</color>
+
+    <color name="grey">#E5E5E5</color>
+    <color name="light_grey">#e8e4e4</color>
+    <color name="new_black">#1A1A1A</color>
+    <color name="primary_green">#006353</color>
 </resources>

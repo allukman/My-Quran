@@ -2,9 +2,9 @@
     <!-- Base application theme. -->
     <style name="Theme.MyQuran" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/brown</item>
-        <item name="colorPrimaryVariant">@color/white</item>
-        <item name="colorOnPrimary">@color/brown</item>
+        <item name="colorPrimary">@color/primary_green</item>
+        <item name="colorPrimaryVariant">@color/black</item>
+        <item name="colorOnPrimary">@color/primary_green</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/brown</item>
         <item name="colorSecondaryVariant">@color/brown</item>
