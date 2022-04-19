@@ -1,12 +1,12 @@
-package id.smartech.myquran.ui
+package id.smartech.myquran.ui.surah
 
-import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
 import id.smartech.myquran.R
 
-class MainActivity : AppCompatActivity() {
+class DetailSurahActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_detail_surah)
     }
 }
