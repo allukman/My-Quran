@@ -32,5 +32,21 @@ class ApiClient {
                     .addConverterFactory(GsonConverterFactory.create())
                     .build()
         }
+
+        fun getGithubApiClient(context: Context): Retrofit {
+            val okHttpClient = OkHttpClient.Builder()
+                .addInterceptor(provideHttpLoggingInterceptor())
+                .connectTimeout(15, TimeUnit.MINUTES)
+                .readTimeout(15, TimeUnit.MINUTES)
+                .writeTimeout(15, TimeUnit.MINUTES)
+                .callTimeout(30, TimeUnit.MINUTES)
+                .build()
+
+            return Retrofit.Builder()
+                .baseUrl("https://raw.githubusercontent.com/")
+                .client(okHttpClient)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build()
+        }
     }
 }

@@ -36,6 +36,10 @@ abstract class BaseActivity<ActivityBinding : ViewDataBinding> : AppCompatActivi
         return ApiClient.getApiClient(context).create(ApiService::class.java)
     }
 
+    protected inline fun <reified ApiService> createGithubApi(context: Context): ApiService {
+        return ApiClient.getGithubApiClient(context).create(ApiService::class.java)
+    }
+
     protected inline fun <reified ClassActivity> intentsResults(
         context: Context,
         requestCode: Int

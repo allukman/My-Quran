@@ -1,6 +1,5 @@
 package id.smartech.myquran.ui.main
 
-import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -13,6 +12,7 @@ import id.smartech.myquran.R
 import id.smartech.myquran.adapter.SurahAdapter
 import id.smartech.myquran.base.BaseActivity
 import id.smartech.myquran.databinding.ActivityMainBinding
+import id.smartech.myquran.ui.asmaulhusna.AsmaulHusnaActivity
 import id.smartech.myquran.ui.main.model.ListSurahModel
 import id.smartech.myquran.ui.surah.DetailSurahActivity
 import id.smartech.myquran.util.Helper
@@ -28,6 +28,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         super.onCreate(savedInstanceState)
 
         initData()
+        setOnClick()
         setViewModel()
         setRecyclerView()
         subscribeLiveData()
@@ -42,6 +43,11 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         bind.date.text = today
     }
 
+    private fun setOnClick() {
+        bind.asmaulHusna.setOnClickListener() {
+            intents<AsmaulHusnaActivity>(this)
+        }
+    }
     private fun subscribeLiveData() {
         this.let {
             viewModel.isLoadingLiveData.observe(it) { isLoading ->

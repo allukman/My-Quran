@@ -12,11 +12,13 @@ import id.smartech.myquran.ui.surah.model.ListAyatModel
 import id.smartech.myquran.util.Helper.fromHtml
 
 class AyatAdapter(private val items: ArrayList<ListAyatModel>): RecyclerView.Adapter<AyatAdapter.AyatViewHolder>() {
+
     fun addList(list: List<ListAyatModel>) {
         items.clear()
         items.addAll(list)
         notifyDataSetChanged()
     }
+
     class AyatViewHolder(val bind: ItemAyatBinding): RecyclerView.ViewHolder(bind.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AyatViewHolder {
