@@ -2,6 +2,7 @@
 <layout xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -57,7 +58,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/container_toolbar">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -68,8 +68,6 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/container_toolbar"
             app:layout_constraintBottom_toBottomOf="parent">
-
-
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardview_1"
@@ -130,7 +128,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardview_2"
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="wrap_content"
                 android:layout_margin="16dp"
                 app:cardCornerRadius="10dp"
                 android:elevation="12dp"
@@ -142,16 +140,18 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:padding="16dp"
                     android:background="@color/primary_green">
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/jadwal_sholat"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
+                        android:layout_width="0dp"
+                        android:layout_height="120dp"
                         android:elevation="12dp"
                         android:src="@drawable/main_background"
                         app:cardCornerRadius="10dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintRight_toLeftOf="@id/doa_harian"
                         app:layout_constraintTop_toTopOf="parent">
@@ -161,13 +161,28 @@
                             android:layout_height="match_parent">
 
                             <ImageView
-                                android:id="@+id/image_illustrated"
+                                android:id="@+id/image_jadwal_sholat"
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
-                                android:layout_marginLeft="16dp"
                                 app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintRight_toRightOf="parent"
                                 app:layout_constraintTop_toTopOf="parent"
-                                android:background=""/>
+                                app:layout_constraintBottom_toTopOf="@id/text_jadwal_sholat"
+                                android:src="@drawable/time"/>
+
+                            <TextView
+                                android:id="@+id/text_jadwal_sholat"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/ptserif"
+                                android:text="Jadwal Sholat"
+                                android:textColor="@color/primary_green"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintRight_toRightOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/image_jadwal_sholat"/>
 
 
                         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -176,44 +191,194 @@
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/doa_harian"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
+                        android:layout_width="0dp"
+                        android:layout_height="120dp"
                         app:cardCornerRadius="10dp"
                         android:elevation="12dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
                         app:layout_constraintLeft_toRightOf="@id/jadwal_sholat"
-                        app:layout_constraintRight_toLeftOf="@id/asmaul_husna"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintBottom_toBottomOf="parent">
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/image_doa"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintRight_toRightOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toTopOf="@id/text_doa"
+                                android:src="@drawable/doa"/>
+
+                            <TextView
+                                android:id="@+id/text_doa"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/ptserif"
+                                android:text="Doa-doa Harian"
+                                android:textColor="@color/primary_green"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintRight_toRightOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/image_doa"/>
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
 
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/asmaul_husna"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        app:cardCornerRadius="10dp"
+                        android:layout_width="0dp"
+                        android:layout_height="120dp"
                         android:elevation="12dp"
-                        app:layout_constraintLeft_toRightOf="@id/doa_harian"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintRight_toRightOf="parent">
+                        android:src="@drawable/main_background"
+                        app:cardCornerRadius="10dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        app:layout_constraintRight_toLeftOf="@id/bookmark"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/jadwal_sholat">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/image_asmaul_husna"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintRight_toRightOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toTopOf="@id/text_asmaul_husna"
+                                android:src="@drawable/asmaulhusna"/>
+
+                            <TextView
+                                android:id="@+id/text_asmaul_husna"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/ptserif"
+                                android:text="Asmaul husna"
+                                android:textColor="@color/primary_green"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintRight_toRightOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/image_asmaul_husna"/>
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
 
                     </androidx.cardview.widget.CardView>
 
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/bookmark"
+                        android:layout_width="0dp"
+                        android:layout_height="120dp"
+                        app:cardCornerRadius="10dp"
+                        android:elevation="12dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginTop="16dp"
+                        app:layout_constraintLeft_toRightOf="@id/asmaul_husna"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/doa_harian">
 
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/image_bookmark"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintRight_toRightOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toTopOf="@id/text_bookmark"
+                                android:src="@drawable/bookmark"/>
+
+                            <TextView
+                                android:id="@+id/text_bookmark"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/ptserif"
+                                android:text="Bookmark"
+                                android:textColor="@color/primary_green"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintRight_toRightOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/image_bookmark"/>
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.cardview.widget.CardView>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.cardview.widget.CardView>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_surah"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="16dp"
+            <TextView
+                android:id="@+id/surah"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/arabetic_latte"
+                android:text="Surah"
+                android:textColor="@color/primary_green"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/cardview_2"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/surah">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_surah"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_marginHorizontal="16dp"
+                    tools:listitem="@layout/item_surah" />
+
+                <com.facebook.shimmer.ShimmerFrameLayout
+                    android:id="@+id/shimmer_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <include layout="@layout/shimmer_item_surah" />
+                        <include layout="@layout/shimmer_item_surah" />
+                        <include layout="@layout/shimmer_item_surah" />
+                        <include layout="@layout/shimmer_item_surah" />
+                        <include layout="@layout/shimmer_item_surah" />
+                    </LinearLayout>
+                </com.facebook.shimmer.ShimmerFrameLayout>
+
+            </RelativeLayout>
+
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

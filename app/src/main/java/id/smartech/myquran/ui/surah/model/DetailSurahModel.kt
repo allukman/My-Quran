@@ -1,9 +1,9 @@
-package id.smartech.myquran.ui.main.model
+package id.smartech.myquran.ui.surah.model
 
 import com.google.gson.annotations.SerializedName
-import java.io.Serializable
 
-data class ListSurahModel (
+data class DetailSurahModel (
+    @SerializedName("status")val status: Boolean?,
     @SerializedName("nomor")val nomor: Int?,
     @SerializedName("nama")val nama: String?,
     @SerializedName("nama_latin")val namaLatin: String?,
@@ -11,5 +11,6 @@ data class ListSurahModel (
     @SerializedName("tempat_turun")val tempatTurun: String?,
     @SerializedName("arti")val arti: String?,
     @SerializedName("deskripsi")val deskripsi: String?,
-    @SerializedName("audio")val audio: String?
-) : Serializable
+    @SerializedName("audio")val audio: String?,
+    @SerializedName("ayat")val ayat: ArrayList<ListAyatModel>
+)

@@ -8,115 +8,165 @@
         android:layout_height="match_parent"
         tools:context=".ui.surah.DetailSurahActivity">
 
-        <ImageView
-            android:id="@+id/back"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:background="@drawable/ic_back"
-            android:layout_margin="16dp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
-
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/ptserif"
-            android:text="Al - Fatihah"
-            android:textColor="@color/primary_green"
-            android:textSize="18sp"
-            android:layout_marginLeft="24dp"
-            android:textStyle="bold"
-            app:layout_constraintLeft_toRightOf="@id/back"
-            app:layout_constraintTop_toTopOf="@id/back"
-            app:layout_constraintBottom_toBottomOf="@id/back" />
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardview"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container_toolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            app:cardCornerRadius="10dp"
-            android:elevation="12dp"
-            android:background="@drawable/main_background_horizontal"
-            app:layout_constraintTop_toBottomOf="@id/back"
+            android:layout_height="60dp"
+            android:background="@color/white"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent">
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/ic_back"
+                android:layout_margin="16dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ptserif"
+                android:text="Al - Fatihah"
+                android:textColor="@color/primary_green"
+                android:textSize="18sp"
+                android:layout_marginLeft="24dp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toRightOf="@id/back"
+                app:layout_constraintTop_toTopOf="@id/back"
+                app:layout_constraintBottom_toBottomOf="@id/back" />
+
+            <ImageView
+                android:id="@+id/bookmark"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/ic_bookmark"
+                android:layout_margin="16dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <ImageView
+                android:id="@+id/unbookmark"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/ic_unbookmark"
+                android:layout_margin="16dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/container_toolbar">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/grey"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/container_toolbar"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/background_1">
+                android:layout_margin="16dp"
+                app:cardCornerRadius="10dp"
+                android:elevation="12dp"
+                android:background="@drawable/main_background_horizontal"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent">
 
-                <TextView
-                    android:id="@+id/surah_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/ptserif"
-                    android:text="Al - Fatihah"
-                    android:textColor="@color/white"
-                    android:textSize="20sp"
-                    android:layout_margin="24dp"
-                    android:textStyle="bold"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"/>
-
-                <TextView
-                    android:id="@+id/arti"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/ptserif"
-                    android:text="Pembukaan"
-                    android:textColor="@color/white"
-                    android:textSize="18sp"
-                    android:layout_margin="24dp"
-                    android:textStyle="bold"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/surah_name"/>
-
-                <View
-                    android:id="@+id/view"
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginVertical="16dp"
-                    android:layout_marginHorizontal="48dp"
-                    android:background="@color/white"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/arti"/>
-
-                <TextView
-                    android:id="@+id/detail"
-                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/ptserif"
-                    android:text="Makah - 7 Ayat"
-                    android:layout_marginTop="24dp"
-                    android:textColor="@color/white"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/view"/>
+                    android:background="@drawable/background_1">
 
-                <TextView
-                    android:id="@+id/bismillah"
-                    android:layout_width="wrap_content"
+                    <TextView
+                        android:id="@+id/surah_name_latin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/ptserif"
+                        android:text="Al - Fatihah"
+                        android:textColor="@color/white"
+                        android:textSize="24sp"
+                        android:layout_marginTop="24dp"
+                        android:layout_marginLeft="48dp"
+                        android:textStyle="bold"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                    <TextView
+                        android:id="@+id/arti"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/ptserif"
+                        android:text="Pembukaan"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintLeft_toLeftOf="@id/surah_name_latin"
+                        app:layout_constraintTop_toBottomOf="@id/surah_name_latin"/>
+
+                    <View
+                        android:id="@+id/view"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginVertical="16dp"
+                        android:layout_marginHorizontal="48dp"
+                        android:background="@color/white"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/arti"/>
+
+                    <TextView
+                        android:id="@+id/detail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/ptserif"
+                        android:text="Makah - 7 Ayat"
+                        android:layout_margin="24dp"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/view"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardview">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_ayat"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/ptserif"
-                    android:text="ِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم"
-                    android:layout_margin="24dp"
-                    android:textColor="@color/white"
-                    android:textSize="32sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/detail"/>
+                    android:layout_marginHorizontal="16dp"
+                    tools:listitem="@layout/item_ayat" />
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </androidx.cardview.widget.CardView>
+            </RelativeLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
