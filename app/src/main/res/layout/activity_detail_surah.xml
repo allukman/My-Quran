@@ -12,7 +12,7 @@
             android:id="@+id/container_toolbar"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:background="@color/white"
+            android:background="@color/primary_green"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -32,7 +32,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/ptserif"
                 android:text="Al - Fatihah"
-                android:textColor="@color/primary_green"
+                android:textColor="@color/white"
                 android:textSize="18sp"
                 android:layout_marginLeft="24dp"
                 android:textStyle="bold"
@@ -71,7 +71,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:background="@color/grey"
+            android:background="@color/white"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/container_toolbar"

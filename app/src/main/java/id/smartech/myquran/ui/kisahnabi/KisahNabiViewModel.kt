@@ -1,17 +1,17 @@
-package id.smartech.myquran.ui.surah
+package id.smartech.myquran.ui.kisahnabi
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import id.smartech.myquran.net.ApiService
-import id.smartech.myquran.ui.surah.model.DetailSurahModel
-import id.smartech.myquran.ui.surah.model.ListAyatModel
+import id.smartech.myquran.ui.asmaulhusna.model.AsmaulHusnaModel
+import id.smartech.myquran.ui.kisahnabi.model.KisahNabiModel
 import kotlinx.coroutines.*
 import kotlin.coroutines.CoroutineContext
 
-class DetailSurahViewModel: ViewModel(), CoroutineScope {
+class KisahNabiViewModel: ViewModel(), CoroutineScope {
     private lateinit var services: ApiService
 
-    val onSuccessLiveData = MutableLiveData<DetailSurahModel>()
+    val onSuccessLiveData = MutableLiveData<List<KisahNabiModel>>()
     val isLoadingLiveData = MutableLiveData<Boolean>()
     val errorMessage = MutableLiveData<String>()
 
@@ -22,13 +22,13 @@ class DetailSurahViewModel: ViewModel(), CoroutineScope {
         this.services = services
     }
 
-    fun getDetailSurah(id: String) {
+    fun getKisahNabi() {
         launch {
             isLoadingLiveData.value = true
-            val response = services.getDetailSurah(id)
+            val response = services.getKisahNabi()
             withContext(Dispatchers.Main) {
                 if (response.isSuccessful) {
-                    onSuccessLiveData.postValue(response.body()?.data)
+                    onSuccessLiveData.value = response.body()
                     isLoadingLiveData.value = false
                 } else {
                     onError("Error : ${response.message()} ")

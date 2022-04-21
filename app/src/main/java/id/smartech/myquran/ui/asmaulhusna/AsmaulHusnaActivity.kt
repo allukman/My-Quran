@@ -10,7 +10,6 @@ import id.smartech.myquran.adapter.AsmaulHusnaAdapter
 import id.smartech.myquran.base.BaseActivity
 import id.smartech.myquran.databinding.ActivityAsmaulHusnaBinding
 import id.smartech.myquran.ui.asmaulhusna.model.AsmaulHusnaModel
-import id.smartech.myquran.ui.asmaulhusna.model.AsmaulHusnaViewModel
 
 class AsmaulHusnaActivity : BaseActivity<ActivityAsmaulHusnaBinding>() {
     private lateinit var viewModel: AsmaulHusnaViewModel

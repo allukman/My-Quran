@@ -13,6 +13,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyQuran">
         <activity
+            android:name=".ui.kisahnabi.KisahNabiDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.kisahnabi.KisahNabiActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.jadwalsholat.JadwalSholatActivity"
             android:exported="false" />
         <activity

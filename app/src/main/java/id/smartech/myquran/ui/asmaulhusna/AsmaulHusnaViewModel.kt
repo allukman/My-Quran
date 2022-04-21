@@ -1,8 +1,9 @@
-package id.smartech.myquran.ui.asmaulhusna.model
+package id.smartech.myquran.ui.asmaulhusna
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import id.smartech.myquran.net.ApiService
+import id.smartech.myquran.ui.asmaulhusna.model.AsmaulHusnaModel
 import kotlinx.coroutines.*
 import kotlin.coroutines.CoroutineContext
 
@@ -22,7 +23,7 @@ class AsmaulHusnaViewModel: ViewModel(), CoroutineScope {
 
     fun getAsmaulHusna() {
         launch {
-            isLoadingLiveData.value = false
+            isLoadingLiveData.value = true
             val response = services.getAsmaulHusna()
             withContext(Dispatchers.Main) {
                 if (response.isSuccessful) {

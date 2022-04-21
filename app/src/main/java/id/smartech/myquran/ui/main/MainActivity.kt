@@ -1,5 +1,6 @@
 package id.smartech.myquran.ui.main
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.ViewModelProvider
@@ -12,7 +13,9 @@ import id.smartech.myquran.adapter.SurahAdapter
 import id.smartech.myquran.base.BaseActivity
 import id.smartech.myquran.databinding.ActivityMainBinding
 import id.smartech.myquran.ui.asmaulhusna.AsmaulHusnaActivity
+import id.smartech.myquran.ui.kisahnabi.KisahNabiActivity
 import id.smartech.myquran.ui.main.model.SurahModel
+import id.smartech.myquran.ui.surah.DetailSurahActivity
 import id.smartech.myquran.util.Helper
 import id.smartech.myquran.util.KarsaLogger
 
@@ -44,6 +47,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     private fun setOnClick() {
         bind.asmaulHusna.setOnClickListener() {
             intents<AsmaulHusnaActivity>(this)
+        }
+
+        bind.kisahnabi.setOnClickListener {
+            intents<KisahNabiActivity>(this)
         }
     }
     private fun subscribeLiveData() {
@@ -88,14 +95,12 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         bind.rvSurah.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
         bind.rvSurah.itemAnimator = DefaultItemAnimator()
 
-//        mAdapter.setOnItemClickCallback(object : SurahAdapter.OnItemClickCallback {
-//            override fun onClickItem(data: ListSurahModel) {
-//                val intent = Intent(this@MainActivity, DetailSurahActivity::class.java)
-//                intent.putExtra("surah", data)
-//                startActivity(intent)
-//
-//                KarsaLogger.print(Gson().toJson(data))
-//            }
-//        })
+        mAdapter.setOnItemClickCallback(object : SurahAdapter.OnItemClickCallback {
+            override fun onClickItem(data: SurahModel) {
+                val intent = Intent(this@MainActivity, DetailSurahActivity::class.java)
+                intent.putExtra("surah", data)
+                startActivity(intent)
+            }
+        })
     }
 }

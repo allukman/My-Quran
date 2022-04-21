@@ -11,24 +11,26 @@ import id.smartech.myquran.R
 import id.smartech.myquran.adapter.AyatAdapter
 import id.smartech.myquran.base.BaseActivity
 import id.smartech.myquran.databinding.ActivityDetailSurahBinding
+import id.smartech.myquran.ui.main.model.SurahModel
+import id.smartech.myquran.ui.surah.model.AyahModel
 import id.smartech.myquran.ui.surah.model.ListAyatModel
 import id.smartech.myquran.util.KarsaLogger
 
 class DetailSurahActivity : BaseActivity<ActivityDetailSurahBinding>() {
     lateinit var viewModel: DetailSurahViewModel
     private lateinit var mAdapter: AyatAdapter
-    private var list = ArrayList<ListAyatModel>()
+    private var list = ArrayList<AyahModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setLayout = R.layout.activity_detail_surah
         super.onCreate(savedInstanceState)
 
-        val data = intent.getSerializableExtra("surah") as ListSurahModel
+        val data = intent.getSerializableExtra("surah") as SurahModel
 
         initData(data)
         toggleBookmark()
         setOnClick()
-        setViewModel(data.nomor.toString())
+        setViewModel(data.number.toString())
         setRecyclerView()
         subscribeLiveData()
 
@@ -49,7 +51,7 @@ class DetailSurahActivity : BaseActivity<ActivityDetailSurahBinding>() {
 
         this.let {
             viewModel.onSuccessLiveData.observe(it) { data ->
-                mAdapter.addList(data.ayat)
+                mAdapter.addList(data.verses)
                 KarsaLogger.print("detail surah " + Gson().toJson(data))
             }
         }
@@ -82,10 +84,10 @@ class DetailSurahActivity : BaseActivity<ActivityDetailSurahBinding>() {
         }
     }
 
-    private fun initData(d: ListSurahModel) {
-        bind.surahNameLatin.text = d.namaLatin
-        bind.arti.text = d.arti
-        bind.detail.text = "${d.tempatTurun} - ${d.jumlahAyat} ayat"
-        bind.title.text = d.namaLatin
+    private fun initData(d: SurahModel) {
+        bind.surahNameLatin.text = d.name?.transliteration?.id
+        bind.arti.text = d.name?.translation?.id
+        bind.detail.text = "${d.revelation?.id} - ${d.numberOfVerses} ayat"
+        bind.title.text = d.name?.transliteration?.id
     }
 }

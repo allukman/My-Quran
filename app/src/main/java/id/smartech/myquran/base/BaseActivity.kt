@@ -40,6 +40,10 @@ abstract class BaseActivity<ActivityBinding : ViewDataBinding> : AppCompatActivi
         return ApiClient.getGithubApiClient(context).create(ApiService::class.java)
     }
 
+    protected inline fun <reified ApiService> createZhirrApi(context: Context): ApiService {
+        return ApiClient.getZhirrApiClient(context).create(ApiService::class.java)
+    }
+
     protected inline fun <reified ClassActivity> intentsResults(
         context: Context,
         requestCode: Int

@@ -18,11 +18,15 @@
         <entry key="..\:/Users/lukman/AndroidStudioProjects/MyQuran/app/src/main/res/layout/activity_asmaul_husna.xml" value="0.14764492753623187" />
         <entry key="..\:/Users/lukman/AndroidStudioProjects/MyQuran/app/src/main/res/layout/activity_detail_surah.xml" value="0.182518115942029" />
         <entry key="..\:/Users/lukman/AndroidStudioProjects/MyQuran/app/src/main/res/layout/activity_jadwal_sholat.xml" value="0.14764492753623187" />
+        <entry key="..\:/Users/lukman/AndroidStudioProjects/MyQuran/app/src/main/res/layout/activity_kisah_nabi.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/lukman/AndroidStudioProjects/MyQuran/app/src/main/res/layout/activity_kisah_nabi_detail.xml" value="0.33" />
         <entry key="..\:/Users/lukman/AndroidStudioProjects/MyQuran/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/lukman/AndroidStudioProjects/MyQuran/app/src/main/res/layout/activity_onboard.xml" value="0.2015625" />
         <entry key="..\:/Users/lukman/AndroidStudioProjects/MyQuran/app/src/main/res/layout/item_asmaul_husna.xml" value="0.22" />
         <entry key="..\:/Users/lukman/AndroidStudioProjects/MyQuran/app/src/main/res/layout/item_ayat.xml" value="0.25" />
+        <entry key="..\:/Users/lukman/AndroidStudioProjects/MyQuran/app/src/main/res/layout/item_kisah_nabi.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/lukman/AndroidStudioProjects/MyQuran/app/src/main/res/layout/item_surah.xml" value="0.22" />
+        <entry key="..\:/Users/lukman/AndroidStudioProjects/MyQuran/app/src/main/res/layout/shimmer_item_kisah_nabi.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/lukman/AndroidStudioProjects/MyQuran/app/src/main/res/layout/shimmer_item_surah.xml" value="0.36820652173913043" />
         <entry key="..\:/Users/lukman/AndroidStudioProjects/MyQuran/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2095" />
       </map>

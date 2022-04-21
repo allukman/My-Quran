@@ -5,7 +5,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.asmaulhusna.AsmaulHusnaActivity">
+        tools:context=".ui.kisahnabi.KisahNabiActivity">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/container_toolbar"
@@ -30,7 +30,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/ptserif"
-                android:text="Asmaul Husna"
+                android:text="Kisah Nabi"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:layout_marginLeft="24dp"
@@ -40,17 +40,6 @@
                 app:layout_constraintTop_toTopOf="@id/back"
                 app:layout_constraintBottom_toBottomOf="@id/back" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <ProgressBar
-            android:id="@+id/progress_bar"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:indeterminate="true"
-            android:indeterminateTint="@color/primary_green"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
@@ -62,14 +51,11 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/grey"
+                android:layout_height="0dp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/container_toolbar"
                 app:layout_constraintBottom_toBottomOf="parent">
-
-
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -79,12 +65,35 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/rv_asmaulhusna"
+                        android:id="@+id/rv_kisahnabi"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:visibility="gone"
+                        android:layout_height="wrap_content"
+                        tools:listitem="@layout/item_surah" />
 
+                    <com.facebook.shimmer.ShimmerFrameLayout
+                        android:id="@+id/shimmer_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <include layout="@layout/shimmer_item_kisah_nabi" />
+                            <include layout="@layout/shimmer_item_kisah_nabi" />
+                            <include layout="@layout/shimmer_item_kisah_nabi" />
+                            <include layout="@layout/shimmer_item_kisah_nabi" />
+                            <include layout="@layout/shimmer_item_kisah_nabi" />
+                            <include layout="@layout/shimmer_item_kisah_nabi" />
+                            <include layout="@layout/shimmer_item_kisah_nabi" />
+                        </LinearLayout>
+                    </com.facebook.shimmer.ShimmerFrameLayout>
                 </RelativeLayout>
+
             </androidx.constraintlayout.widget.ConstraintLayout>
+
         </androidx.core.widget.NestedScrollView>
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
