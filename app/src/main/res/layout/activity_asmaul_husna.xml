@@ -41,6 +41,17 @@
                 app:layout_constraintBottom_toBottomOf="@id/back" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:indeterminate="true"
+            android:indeterminateTint="@color/primary_green"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -51,12 +62,14 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="match_parent"
                 android:background="@color/grey"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/container_toolbar"
                 app:layout_constraintBottom_toBottomOf="parent">
+
+
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -68,8 +81,7 @@
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/rv_asmaulhusna"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        tools:listitem="@layout/item_asmaul_husna" />
+                        android:layout_height="wrap_content"/>
 
                 </RelativeLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>

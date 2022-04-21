@@ -1,7 +1,5 @@
 package id.smartech.myquran.ui.surah
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.ViewModelProvider
@@ -11,10 +9,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
 import id.smartech.myquran.R
 import id.smartech.myquran.adapter.AyatAdapter
-import id.smartech.myquran.adapter.SurahAdapter
 import id.smartech.myquran.base.BaseActivity
 import id.smartech.myquran.databinding.ActivityDetailSurahBinding
-import id.smartech.myquran.ui.main.model.ListSurahModel
 import id.smartech.myquran.ui.surah.model.ListAyatModel
 import id.smartech.myquran.util.KarsaLogger
 

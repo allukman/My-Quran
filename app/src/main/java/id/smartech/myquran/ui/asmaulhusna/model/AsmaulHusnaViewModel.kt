@@ -3,7 +3,6 @@ package id.smartech.myquran.ui.asmaulhusna.model
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import id.smartech.myquran.net.ApiService
-import id.smartech.myquran.ui.main.model.ListSurahModel
 import kotlinx.coroutines.*
 import kotlin.coroutines.CoroutineContext
 

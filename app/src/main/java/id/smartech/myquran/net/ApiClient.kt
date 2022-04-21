@@ -27,7 +27,7 @@ class ApiClient {
                     .build()
 
             return Retrofit.Builder()
-                    .baseUrl("https://equran.id/api/")
+                    .baseUrl("https://api.quran.sutanlab.id/")
                     .client(okHttpClient)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build()

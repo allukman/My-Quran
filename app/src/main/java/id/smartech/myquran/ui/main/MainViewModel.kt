@@ -3,14 +3,14 @@ package id.smartech.myquran.ui.main
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import id.smartech.myquran.net.ApiService
-import id.smartech.myquran.ui.main.model.ListSurahModel
+import id.smartech.myquran.ui.main.model.AllSurahResponse
 import kotlinx.coroutines.*
 import kotlin.coroutines.CoroutineContext
 
 class MainViewModel : ViewModel(), CoroutineScope {
     private lateinit var services: ApiService
 
-    val onSuccessLiveData = MutableLiveData<List<ListSurahModel>>()
+    val onSuccessLiveData = MutableLiveData<AllSurahResponse>()
     val isLoadingLiveData = MutableLiveData<Boolean>()
     val errorMessage = MutableLiveData<String>()
 

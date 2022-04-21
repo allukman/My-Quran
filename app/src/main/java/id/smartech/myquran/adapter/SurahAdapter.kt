@@ -6,16 +6,16 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import id.smartech.myquran.R
 import id.smartech.myquran.databinding.ItemSurahBinding
-import id.smartech.myquran.ui.main.model.ListSurahModel
+import id.smartech.myquran.ui.main.model.SurahModel
 
-class SurahAdapter(private val items: ArrayList<ListSurahModel>): RecyclerView.Adapter<SurahAdapter.SurahViewHolder>() {
-    private lateinit var onItemClickCallback: OnItemClickCallback
+class SurahAdapter(private val items: ArrayList<SurahModel>): RecyclerView.Adapter<SurahAdapter.SurahViewHolder>() {
+//    private lateinit var onItemClickCallback: OnItemClickCallback
+//
+//    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
+//        this.onItemClickCallback = onItemClickCallback
+//    }
 
-    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
-        this.onItemClickCallback = onItemClickCallback
-    }
-
-    fun addList(list: List<ListSurahModel>) {
+    fun addList(list: List<SurahModel>) {
         items.clear()
         items.addAll(list)
         notifyDataSetChanged()
@@ -36,19 +36,19 @@ class SurahAdapter(private val items: ArrayList<ListSurahModel>): RecyclerView.A
 
     override fun onBindViewHolder(holder: SurahViewHolder, position: Int) {
         val item = items[position]
-        val detail = "${item.tempatTurun} - ${item.jumlahAyat} ayat"
+        val detail = "${item.revelation?.id} - ${item.numberOfVerses} ayat"
 
-        holder.bind.number.text = item.nomor.toString()
-        holder.bind.surahNameLatin.text = item.namaLatin
-        holder.bind.surahName.text = item.nama
+        holder.bind.number.text = item.number.toString()
+        holder.bind.surahNameLatin.text = item.name?.transliteration?.id
+        holder.bind.surahName.text = item.name?.short
         holder.bind.detail.text = detail
 
-        holder.itemView.setOnClickListener {
-            onItemClickCallback.onClickItem(item)
-        }
+//        holder.itemView.setOnClickListener {
+//            onItemClickCallback.onClickItem(item)
+//        }
     }
 
-    interface OnItemClickCallback {
-        fun onClickItem(data: ListSurahModel)
-    }
+//    interface OnItemClickCallback {
+//        fun onClickItem(data: ListSurahModel)
+//    }
 }

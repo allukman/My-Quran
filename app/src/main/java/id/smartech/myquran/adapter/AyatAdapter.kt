@@ -6,8 +6,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import id.smartech.myquran.R
 import id.smartech.myquran.databinding.ItemAyatBinding
-import id.smartech.myquran.databinding.ItemSurahBinding
-import id.smartech.myquran.ui.main.model.ListSurahModel
 import id.smartech.myquran.ui.surah.model.ListAyatModel
 import id.smartech.myquran.util.Helper.fromHtml
 
