@@ -45,7 +45,13 @@ class DetailSurahActivity : BaseActivity<ActivityDetailSurahBinding>() {
     private fun subscribeLiveData() {
         this.let {
             viewModel.isLoadingLiveData.observe(it) { isLoading ->
-
+                if (isLoading) {
+                    bind.rvAyat.visibility = View.GONE
+                    bind.shimmerLayout.visibility = View.VISIBLE
+                } else {
+                    bind.rvAyat.visibility = View.VISIBLE
+                    bind.shimmerLayout.visibility = View.GONE
+                }
             }
         }
 

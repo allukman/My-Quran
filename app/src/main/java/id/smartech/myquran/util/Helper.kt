@@ -13,6 +13,11 @@ object Helper {
         return sdf.format(Date())
     }
 
+    fun getCurrentDateAdzan(): String {
+        val sdf = SimpleDateFormat("yyyy/MM/dd")
+        return sdf.format(Date())
+    }
+
     fun getCurrentDayOfWeek() : String {
         val calendar = Calendar.getInstance()
         when (calendar.get(Calendar.DAY_OF_WEEK)) {
@@ -34,7 +39,7 @@ object Helper {
             Calendar.FRIDAY -> {
                 return "Jum'at"
             }
-            Calendar.FRIDAY -> {
+            Calendar.SATURDAY -> {
                 return "Sabtu"
             } else -> {
                 return " "

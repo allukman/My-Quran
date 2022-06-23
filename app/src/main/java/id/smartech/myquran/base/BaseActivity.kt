@@ -44,6 +44,10 @@ abstract class BaseActivity<ActivityBinding : ViewDataBinding> : AppCompatActivi
         return ApiClient.getZhirrApiClient(context).create(ApiService::class.java)
     }
 
+    protected inline fun <reified ApiService> createMyQuranApi(context: Context): ApiService {
+        return ApiClient.getMyQuranApiClient(context).create(ApiService::class.java)
+    }
+
     protected inline fun <reified ClassActivity> intentsResults(
         context: Context,
         requestCode: Int

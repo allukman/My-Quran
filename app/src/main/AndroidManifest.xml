@@ -13,21 +13,41 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyQuran">
         <activity
+            android:name="id.smartech.myquran.ui.jadwalsholat.lokasi.LokasiActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MyQuran.NoActionBar"/>
+        <activity
             android:name=".ui.kisahnabi.KisahNabiDetailActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MyQuran.NoActionBar"/>
         <activity
             android:name=".ui.kisahnabi.KisahNabiActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MyQuran.NoActionBar"/>
         <activity
             android:name=".ui.jadwalsholat.JadwalSholatActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MyQuran.NoActionBar"/>
         <activity
             android:name=".ui.asmaulhusna.AsmaulHusnaActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MyQuran.NoActionBar"/>
         <activity
             android:name=".ui.surah.DetailSurahActivity"
-            android:exported="false" />
-        <activity android:name=".ui.main.MainActivity" />
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MyQuran.NoActionBar"/>
+
+
+        <activity android:name=".ui.main.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MyQuran.NoActionBar"/>
+
         <activity android:name=".ui.OnboardActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

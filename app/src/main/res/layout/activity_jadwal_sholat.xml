@@ -8,11 +8,22 @@
         android:layout_height="match_parent"
         tools:context=".ui.jadwalsholat.JadwalSholatActivity">
 
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:indeterminate="true"
+            android:indeterminateTint="@color/primary_green"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/container_toolbar"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:background="@color/white"
+            android:background="@color/primary_green"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -32,16 +43,17 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/ptserif"
                 android:text="Jadwal Sholat"
-                android:textColor="@color/primary_green"
+                android:textColor="@color/white"
                 android:textSize="18sp"
-                android:layout_marginLeft="24dp"
+                android:layout_marginStart="24dp"
                 android:textStyle="bold"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="@id/back"
                 app:layout_constraintBottom_toBottomOf="@id/back" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-        <androidx.constraintlayout.widget.ConstraintLayout
+
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -49,6 +61,367 @@
             app:layout_constraintTop_toBottomOf="@id/container_toolbar"
             app:layout_constraintBottom_toBottomOf="parent">
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/container_toolbar"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    app:cardCornerRadius="10dp"
+                    android:elevation="12dp"
+                    android:background="@drawable/main_background_horizontal"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/background_1">
+
+                        <TextView
+                            android:id="@+id/time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/white"
+                            android:textSize="24sp"
+                            android:layout_marginTop="24dp"
+                            android:textStyle="bold"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"/>
+
+                        <TextView
+                            android:id="@+id/text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/ptserif"
+                            android:textColor="@color/white"
+                            android:textSize="16sp"
+                            android:layout_marginTop="8dp"
+                            app:layout_constraintLeft_toLeftOf="@id/time"
+                            app:layout_constraintTop_toBottomOf="@id/time"/>
+
+                        <View
+                            android:id="@+id/view"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginVertical="16dp"
+                            android:layout_marginHorizontal="48dp"
+                            android:background="@color/white"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/text"/>
+
+                        <TextView
+                            android:id="@+id/date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/ptserif"
+                            android:textColor="@color/white"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:layout_margin="24dp"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/view"/>
+
+                        <TextView
+                            android:id="@+id/kota"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="24dp"
+                            android:textColor="@color/white"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/date"/>
+
+                        <ImageView
+                            android:id="@+id/location"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:background="@drawable/ic_edit_location"
+                            android:layout_marginLeft="16dp"
+                            app:layout_constraintBottom_toBottomOf="@id/kota"
+                            app:layout_constraintLeft_toRightOf="@id/kota"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/jadwal_sholat_bulanan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:layout_margin="16dp"
+                    android:textColor="@color/white"
+                    android:background="@drawable/background_1"
+                    android:textSize="14sp"
+                    android:paddingHorizontal="24dp"
+                    android:fontFamily="@font/ptserif"
+                    android:text="Jadwal Sholat Bulan Ini"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cardview"/>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/container_imsak"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/jadwal_sholat_bulanan">
+
+                    <View
+                        android:id="@+id/view_imsak"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginHorizontal="16dp"
+                        android:background="@drawable/background_1"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                    <TextView
+                        android:id="@+id/imsak"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        app:layout_constraintBottom_toBottomOf="@id/view_imsak"
+                        app:layout_constraintLeft_toLeftOf="@id/view_imsak"
+                        app:layout_constraintTop_toTopOf="@id/view_imsak" />
+
+                    <ImageView
+                        android:id="@+id/timer_imsak"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/ic_timer"
+                        android:layout_margin="16dp"
+                        app:layout_constraintTop_toTopOf="@id/view_imsak"
+                        app:layout_constraintBottom_toBottomOf="@id/view_imsak"
+                        app:layout_constraintRight_toRightOf="@id/view_imsak"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/container_subuh"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/container_imsak">
+
+                    <View
+                        android:id="@+id/view_subuh"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginHorizontal="16dp"
+                        android:background="@drawable/background_1"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                    <TextView
+                        android:id="@+id/subuh"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        app:layout_constraintBottom_toBottomOf="@id/view_subuh"
+                        app:layout_constraintLeft_toLeftOf="@id/view_subuh"
+                        app:layout_constraintTop_toTopOf="@id/view_subuh" />
+
+                    <ImageView
+                        android:id="@+id/timer_subuh"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/ic_timer"
+                        android:layout_margin="16dp"
+                        app:layout_constraintTop_toTopOf="@id/view_subuh"
+                        app:layout_constraintBottom_toBottomOf="@id/view_subuh"
+                        app:layout_constraintRight_toRightOf="@id/view_subuh"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/container_dzuhur"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/container_subuh">
+
+                    <View
+                        android:id="@+id/view_dzuhur"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginHorizontal="16dp"
+                        android:background="@drawable/background_1"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                    <TextView
+                        android:id="@+id/dzuhur"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        app:layout_constraintBottom_toBottomOf="@id/view_dzuhur"
+                        app:layout_constraintLeft_toLeftOf="@id/view_dzuhur"
+                        app:layout_constraintTop_toTopOf="@id/view_dzuhur"/>
+
+                    <ImageView
+                        android:id="@+id/timer_dzuhur"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/ic_timer"
+                        android:layout_margin="16dp"
+                        app:layout_constraintTop_toTopOf="@id/view_dzuhur"
+                        app:layout_constraintBottom_toBottomOf="@id/view_dzuhur"
+                        app:layout_constraintRight_toRightOf="@id/view_dzuhur"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/container_ashar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/container_dzuhur">
+
+                    <View
+                        android:id="@+id/view_ashar"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginHorizontal="16dp"
+                        android:background="@drawable/background_1"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                    <TextView
+                        android:id="@+id/ashar"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        app:layout_constraintBottom_toBottomOf="@id/view_ashar"
+                        app:layout_constraintLeft_toLeftOf="@id/view_ashar"
+                        app:layout_constraintTop_toTopOf="@id/view_ashar"/>
+
+                    <ImageView
+                        android:id="@+id/timer_ashar"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/ic_timer"
+                        android:layout_margin="16dp"
+                        app:layout_constraintTop_toTopOf="@id/view_ashar"
+                        app:layout_constraintBottom_toBottomOf="@id/view_ashar"
+                        app:layout_constraintRight_toRightOf="@id/view_ashar"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/container_maghrib"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/container_ashar">
+
+                    <View
+                        android:id="@+id/view_maghrib"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginHorizontal="16dp"
+                        android:background="@drawable/background_1"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                    <TextView
+                        android:id="@+id/maghrib"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        app:layout_constraintBottom_toBottomOf="@id/view_maghrib"
+                        app:layout_constraintLeft_toLeftOf="@id/view_maghrib"
+                        app:layout_constraintTop_toTopOf="@id/view_maghrib"/>
+
+                    <ImageView
+                        android:id="@+id/timer_maghrib"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/ic_timer"
+                        android:layout_margin="16dp"
+                        app:layout_constraintTop_toTopOf="@id/view_maghrib"
+                        app:layout_constraintBottom_toBottomOf="@id/view_maghrib"
+                        app:layout_constraintRight_toRightOf="@id/view_maghrib"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/container_isya"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/container_maghrib">
+
+                    <View
+                        android:id="@+id/view_isya"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginHorizontal="16dp"
+                        android:background="@drawable/background_1"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                    <TextView
+                        android:id="@+id/isya"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        app:layout_constraintBottom_toBottomOf="@id/view_isya"
+                        app:layout_constraintLeft_toLeftOf="@id/view_isya"
+                        app:layout_constraintTop_toTopOf="@id/view_isya"/>
+
+                    <ImageView
+                        android:id="@+id/timer_isya"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/ic_timer"
+                        android:layout_margin="16dp"
+                        app:layout_constraintTop_toTopOf="@id/view_isya"
+                        app:layout_constraintBottom_toBottomOf="@id/view_isya"
+                        app:layout_constraintRight_toRightOf="@id/view_isya"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
