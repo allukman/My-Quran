@@ -13,6 +13,7 @@ import id.smartech.myquran.adapter.SurahAdapter
 import id.smartech.myquran.base.BaseActivity
 import id.smartech.myquran.databinding.ActivityMainBinding
 import id.smartech.myquran.ui.asmaulhusna.AsmaulHusnaActivity
+import id.smartech.myquran.ui.hadith.HadithActivity
 import id.smartech.myquran.ui.jadwalsholat.JadwalSholatActivity
 import id.smartech.myquran.ui.kisahnabi.KisahNabiActivity
 import id.smartech.myquran.ui.main.model.SurahModel
@@ -56,6 +57,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
         bind.jadwalSholat.setOnClickListener {
             intents<JadwalSholatActivity>(this)
+        }
+
+        bind.hadith.setOnClickListener {
+            intents<HadithActivity>(this)
         }
     }
     private fun subscribeLiveData() {
